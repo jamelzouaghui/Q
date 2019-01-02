@@ -7,6 +7,7 @@ parameters:
     locale: 'fr'
     session_max_idle_time: 1800
     image_directory: '%kernel.project_dir%\public\uploads\users'
+    brochures_directory: '%kernel.project_dir%/public/uploads/brochures'
     
 
 services:

@@ -3,6 +3,9 @@
 /.env.local
 /.env.*.local
 /public/bundles/
+/public/bower_components/
+
+
 /var/
 /vendor/
 ###< symfony/framework-bundle ###

@@ -4,16 +4,124 @@
 
     <div id= "ContactForm" class="box-body">
         {{form_start(form)}}
-        {{form_widget(form)}}
+
         <div class="form-group">
-            <label for="Email1">Email address</label>
-           
-            {{form_widget(form.firstname)}}
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.firstname)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.lastname)}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.email)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.societe)}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.taille)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.corpeOne)}}
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.corpeToo)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.corpeThree)}}
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.verbatim)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.q1)}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.q2)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.q3)}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.q4)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.q5)}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.noteGlobale)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.moyenneEvaluation)}}
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.marque)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.application)}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.departement)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.recommandation)}}
+                </div>
+            </div>
+                 <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.classification)}}
+                </div>
+                <div class="col-md-5 pull-right">
+                    {{form_row(form.distribution)}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    {{form_row(form.dateCreation)}}
+                </div>
+
+            </div>
+
         </div>
 
-
-
-        <input type="submit" class="btn" value="create"/>
-        {{form_end(form)}}
     </div>
+
+
+
+
+
+    <input type="submit" class="btn" value="Valider"/>
+    {{form_end(form)}}
+</div>
 {% endblock %}

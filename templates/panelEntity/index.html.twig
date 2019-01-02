@@ -37,24 +37,33 @@
             <tbody>
                 {% for contact in panelEntity %}
                     <tr>
+                        <td>{{contact.firstname}}</td>
+                        <td>{{contact.lastname}}</td>
+                        <td>{{contact.email}}</td>
+                        <td>{{contact.societe}}</td>
+                        <td>{{contact.taille}}</td>
+                        <td>{{contact.CorpeOne}}</td>
+                        <td>{{contact.verbatim}}</td>
+                        <td>{{contact.marque}}</td>
+                        <td>{{contact.solution}}</td>
+                        <td>{{contact.application}}</td>
+                        <td>{{contact.distribution}}</td>
+                        <td>{{contact.departement}}</td>
+                        <td>{{contact.source}}</td>
+                        <td>{{contact.recommandation}}</td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Action</td>
+
+                        <td>
+                            <button type="button" class="btn  btn-success float-left">
+                                <i class="fa fa-fw fa-edit"></i>
+                            </button>
+                            <button type="button" class="btn  btn-danger float-left">
+                                <i class="fa fa-fw fa-times"></i>
+                            </button>
+                           
+                        </td>
                     </tr>
                 {%endfor%}
             </tbody>

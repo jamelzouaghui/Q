@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\PanelEntityRepository;
-use DateTimeInterface;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="PanelEntityRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\PanelEntityRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class PanelEntity {
 
@@ -134,12 +135,20 @@ class PanelEntity {
     private $region;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="datetime")
+     */
+    private $dateCreation;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="createdAt",type="datetime", nullable=true)
      */
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     * @ORM\Column(name="updatedAt",type="datetime", nullable=true)
      */
     private $updatedAt;
 
@@ -156,7 +165,7 @@ class PanelEntity {
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $source;
+    private $source = 'Ajout manuel';
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -177,6 +186,10 @@ class PanelEntity {
      * @ORM\Column(type="integer", nullable=true)
      */
     private $statut;
+
+    public function __construct() {
+        
+    }
 
     public function getId() {
         return $this->id;
@@ -412,31 +425,65 @@ class PanelEntity {
         return $this;
     }
 
-    public function getCreatedAt() {
-        return $this->createdAt;
+    public function getDateCreation() {
+        return $this->dateCreation;
     }
 
-    public function setCreatedAt(DateTimeInterface $createdAt) {
+    public function setDateCreation($dateCreation) {
+        $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    /**
+     * Set createdAt.
+     *
+     * @param DateTime $createdAt
+     *
+     * 
+     */
+    public function setCreatedAt($createdAt) {
         $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getUpdatedAt() {
-        return $this->updatedAt;
+    /**
+     * Get createdAt.
+     *
+     * @return DateTime
+     */
+    public function getCreatedAt() {
+        return $this->createdAt;
     }
 
-    public function setUpdatedAt(DateTimeInterface $updatedAt) {
+    /**
+     * Set updatedAt.
+     *
+     * @param DateTime $updatedAt
+     *
+     * @return Address
+     */
+    public function setUpdatedAt($updatedAt) {
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    /**
+     * Get updatedAt.
+     *
+     * @return DateTime
+     */
+    public function getUpdatedAt() {
+        return $this->updatedAt;
     }
 
     public function getRecommandation() {
         return $this->recommandation;
     }
 
-    public function setRecommandation(int $recommandation) {
+    public function setRecommandation($recommandation) {
         $this->recommandation = $recommandation;
 
         return $this;
@@ -446,7 +493,7 @@ class PanelEntity {
         return $this->refuseDiscussion;
     }
 
-    public function setRefuseDiscussion(int $refuseDiscussion) {
+    public function setRefuseDiscussion($refuseDiscussion) {
         $this->refuseDiscussion = $refuseDiscussion;
 
         return $this;
@@ -456,7 +503,7 @@ class PanelEntity {
         return $this->source;
     }
 
-    public function setSource(string $source) {
+    public function setSource($source) {
         $this->source = $source;
 
         return $this;
@@ -466,7 +513,7 @@ class PanelEntity {
         return $this->etat;
     }
 
-    public function setEtat(int $etat) {
+    public function setEtat($etat) {
         $this->etat = $etat;
 
         return $this;
@@ -501,5 +548,19 @@ class PanelEntity {
 
         return $this;
     }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updatedTimestamps(): void {
+        $dateTimeNow = new DateTime('now');
+        $this->setUpdatedAt($dateTimeNow);
+        if ($this->getCreatedAt() === null) {
+            $this->setCreatedAt($dateTimeNow);
+        }
+    }
+
+ 
 
 }

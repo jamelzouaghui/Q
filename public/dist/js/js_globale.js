@@ -21,11 +21,13 @@ $(function () {
 
 
     $('#users').DataTable({
+        scrollX: true,
         'paging': true,
         'lengthChange': false,
         'searching': false,
         'ordering': true,
         'info': true,
-        'autoWidth': false
+        'autoWidth': true
     })
+    
 })

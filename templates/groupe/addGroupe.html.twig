@@ -1,0 +1,55 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+    <div id= "ContactForm" class="box-body">
+
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-2">
+
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10">
+                    {{form_start(form)}}
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            {{form_row(form.name)}}
+                        </div>
+                        <div class="col-md-5 pull-right">
+                            {{form_row(form.raison)}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            {{form_row(form.photoCouverture)}}
+                        </div>
+                        <div class="col-md-5 pull-right">
+                            {{form_row(form.photoGroupe)}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            {{form_row(form.description1)}}
+                        </div>
+                        <div class="col-md-5 pull-right">
+                            {{form_row(form.description2)}}
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn" value="Valider"/>
+                    {{form_end(form)}}
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+{% endblock %}

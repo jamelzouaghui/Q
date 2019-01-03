@@ -8,6 +8,7 @@ parameters:
     session_max_idle_time: 1800
     image_directory: '%kernel.project_dir%\public\uploads\users'
     brochures_directory: '%kernel.project_dir%/public/uploads/brochures'
+    animateur_directory: '%kernel.project_dir%\public\uploads\animateur'
     
 
 services:

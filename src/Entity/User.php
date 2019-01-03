@@ -170,4 +170,14 @@ class User implements UserInterface, Serializable {
         return $this;
     }
 
+    public function getPhoto() {
+        return $this->photo;
+    }
+
+    public function setPhoto($photo) {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
 }

@@ -3,8 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GroupeRepository;
-use Doctrine\ORM\Mapping as ORM;
 use DateTime;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\GroupeRepository")
@@ -73,6 +73,18 @@ class Groupe {
      * @ORM\Column(type="text")
      */
     private $description2;
+
+    /**
+     *  @ORM\ManyToOne(targetEntity="Animateur")
+     *  @ORM\JoinColumn(name="animateur_id", referencedColumnName="id")
+     */
+    private $animateur;
+
+    /**
+     *  @ORM\ManyToOne(targetEntity="User")
+     *  @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
     public function getId() {
         return $this->id;
@@ -198,6 +210,26 @@ class Groupe {
         if ($this->getCreatedAt() === null) {
             $this->setCreatedAt($dateTimeNow);
         }
+    }
+
+    public function getAnimateur() {
+        return $this->animateur;
+    }
+
+    public function setAnimateur($animateur) {
+        $this->animateur = $animateur;
+
+        return $this;
+    }
+
+    public function getUser() {
+        return $this->user;
+    }
+
+    public function setUser($user) {
+        $this->user = $user;
+
+        return $this;
     }
 
 }

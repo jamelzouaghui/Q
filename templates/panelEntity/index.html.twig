@@ -10,7 +10,24 @@
 {% endblock %}
 {% block body %}
 
+
     <div class="box-body">
+        <div class="row">
+            <form  action="{{ path('import-contact') }}" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputFile">Importer des contacts</label>
+                    <input type="file" name="FileUpload" id="FileUpload">
+                    <p class="help-block">Nom de l'import</p>
+
+                    <input type="text" value="" name="source" class="col-md-4 form-control">
+
+                </div>
+                <button type="submit" class="btn  btn-success float-left">
+                    <i class="fa fa-fw fa-clone"></i>Sauvegarder
+                </button>
+            </form>
+        </div>
+
         <table id="users" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer cell-border">
             <thead>
                 <tr>
@@ -62,7 +79,7 @@
                             <button type="button" class="btn  btn-danger float-left">
                                 <i class="fa fa-fw fa-times"></i>
                             </button>
-                           
+
                         </td>
                     </tr>
                 {%endfor%}

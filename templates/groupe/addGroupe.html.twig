@@ -38,7 +38,32 @@
                         </div>
                     </div>
 
-                    <input type="submit" class="btn" value="Valider"/>
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            {{form_row(form.animateur.firstname)}}
+                        </div>
+                        <div class="col-md-5 pull-right">
+                            {{form_row(form.animateur.lastname)}}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            {{form_row(form.animateur.photo)}}
+                        </div>
+                        <div class="col-md-5 pull-right">
+                            {{form_row(form.animateur.profession)}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            {{form_row(form.animateur.civility)}}
+                        </div>
+                        
+                    </div>
+
+                    <input type="submit" class="btn  btn-success" value="Valider"/>
                     {{form_end(form)}}
                 </div>
             </div>

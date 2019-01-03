@@ -1,5 +1,7 @@
 <?php
 namespace App\Controller;
+
+use App\Entity\Animateur;
 use App\Entity\Groupe;
 use App\Form\GroupeType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,11 +36,14 @@ class GroupeController extends AbstractController {
 
         $em = $this->getDoctrine()->getManager();
         $groupe = new Groupe();
+        $animateur = new Animateur();
         $form = $this->createForm(GroupeType::class, $groupe);
 
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            
+          
             
             $photoCouverture = $form->get('photoCouverture')->getData();
             $photoCouvertureName = $this->generateUniqueFileName() . '.' . $photoCouverture->guessExtension();
@@ -59,12 +64,17 @@ class GroupeController extends AbstractController {
             $groupe->setPhotoCouverture($photoCouvertureName);
             $groupe->setPhotoGroupe($photoGroupeName);
 
-
-
-
+           $animateurValue = $form->get('animateur')->getData(true);
+           $em->persist($animateurValue);
+           
+       
+           $groupe->setAnimateur($animateurValue);
+            $groupe->setUser($this->getUser());
             $em->persist($groupe);
+         
+            
             $em->flush();
-            return $this->redirectToRoute('groupes');
+            return $this->redirectToRoute('panels');
         }
 
         return $this->render('groupe/addGroupe.html.twig', [

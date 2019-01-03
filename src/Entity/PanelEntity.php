@@ -187,6 +187,12 @@ class PanelEntity {
      */
     private $statut;
 
+    /**
+     *  @ORM\ManyToOne(targetEntity="User")
+     *  @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
     public function __construct() {
         
     }
@@ -349,7 +355,7 @@ class PanelEntity {
         return $this->moyenneEvaluation;
     }
 
-    public function setMoyenneEvaluation(int $moyenneEvaluation) {
+    public function setMoyenneEvaluation( $moyenneEvaluation) {
         $this->moyenneEvaluation = $moyenneEvaluation;
 
         return $this;
@@ -561,6 +567,14 @@ class PanelEntity {
         }
     }
 
- 
+    public function getUser() {
+        return $this->user;
+    }
+
+    public function setUser($user) {
+        $this->user = $user;
+
+        return $this;
+    }
 
 }

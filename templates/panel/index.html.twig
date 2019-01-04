@@ -11,9 +11,36 @@
 {% block body %}
     <div class="box-body" ng-app="MonApp">
         <div class="row"  ng-controller="PanelController">
-            <p>Input something in the input box:</p>
-            <p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
-            <h1>Hello [[name]]</h1>
+            <div class="col-md-4">
+               
+            </div>
+            <div class="col-md-4">
+                 <ui-select multiple position="up" ng-model="ctrl.multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                    <ui-select-match placeholder="Select Prenom..."> [[$item.lastname]] </ui-select-match>
+                    <ui-select-choices repeat="person in panels ">
+                        <div ng-bind-html="person.lastname"></div>
+                       {# <small>
+                            email:
+                            [[person.firstname]]
+                            age: <span ng-bind-html="''+person.firstname"></span>
+                        </small>#}
+                    </ui-select-choices>
+                </ui-select>
+
+            </div>
+            <div class="col-md-4">
+                <ui-select multiple position="down"  ng-model="ctrl.multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                    <ui-select-match placeholder="Select Nom..."> [[$item.firstname]] </ui-select-match>
+                    <ui-select-choices repeat="person in panels ">
+                        <div ng-bind-html="person.firstname"></div>
+                       {# <small>
+                            email:
+                            [[person.firstname]]
+                            age: <span ng-bind-html="''+person.firstname"></span>
+                        </small>#}
+                    </ui-select-choices>
+                </ui-select>
+            </div>
 
         </div>
 

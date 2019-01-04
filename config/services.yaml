@@ -50,3 +50,7 @@ services:
     App\Form\MediaType:
         arguments:
             $imagePath: '%image_directory%'
+            
+            
+    sensio_framework_extra.view.listener:
+        alias: Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener

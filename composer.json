@@ -6,6 +6,9 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/annotations": "^1.6",
+        "friendsofsymfony/jsrouting-bundle": "^2.2",
+        "friendsofsymfony/rest-bundle": "^2.5",
+        "jms/serializer-bundle": "^3.0",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
@@ -26,6 +29,7 @@
         "symfony/twig-bundle": "4.2.*",
         "symfony/validator": "4.2.*",
         "symfony/web-link": "4.2.*",
+        "symfony/web-server-bundle": "4.2.*",
         "symfony/webpack-encore-bundle": "^1.0",
         "symfony/yaml": "4.2.*"
     },
@@ -34,8 +38,7 @@
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "^1.0",
-        "symfony/test-pack": "*",
-        "symfony/web-server-bundle": "4.2.*"
+        "symfony/test-pack": "*"
     },
     "config": {
         "preferred-install": {

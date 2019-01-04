@@ -7,9 +7,15 @@
 
 app = angular.module('MonApp');
 
-app.controller('PanelController', function () {
+app.controller('PanelController', function ($scope, $rootScope, $http) {
+    
+    console.log('test angular ');
+    
+    $http.get(Routing.generate('listpanels'))
+            .then(function (result) {
+                $scope.panels = result.data.panels;
+            });
 
-console.log('test angular ');
 
 
 });

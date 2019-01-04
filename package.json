@@ -20,6 +20,9 @@
     "main": "index.js",
     "dependencies": {
         "angular": "^1.7.5",
-        "ionicons-inline": "1.0.0"
+        "angular-route": "^1.7.5",
+        "angular-sanitize": "^1.7.5",
+        "ionicons-inline": "1.0.0",
+        "ui-select": "^0.19.8"
     }
 }

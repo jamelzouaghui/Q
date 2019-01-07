@@ -22,6 +22,7 @@
         "angular": "^1.7.5",
         "angular-route": "^1.7.5",
         "angular-sanitize": "^1.7.5",
+        "angularjs-dropdown-multiselect": "^2.0.0-beta.10",
         "ionicons-inline": "1.0.0",
         "ui-select": "^0.19.8"
     }

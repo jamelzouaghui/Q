@@ -5,6 +5,6 @@
  */
 
 
-var app = angular.module('MonApp', ['ngSanitize','ui.select']).config(function ($interpolateProvider) {
+var app = angular.module('MonApp', ['ngSanitize','angularjs-dropdown-multiselect']).config(function ($interpolateProvider) {
     $interpolateProvider.startSymbol('[[').endSymbol(']]');
 });

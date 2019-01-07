@@ -9,37 +9,44 @@
     </ol>
 {% endblock %}
 {% block body %}
+
     <div class="box-body" ng-app="MonApp">
         <div class="row"  ng-controller="PanelController">
-            <div class="col-md-4">
-               
-            </div>
-            <div class="col-md-4">
-                 <ui-select multiple position="up" ng-model="ctrl.multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
-                    <ui-select-match placeholder="Select Prenom..."> [[$item.lastname]] </ui-select-match>
-                    <ui-select-choices repeat="person in panels ">
-                        <div ng-bind-html="person.lastname"></div>
-                       {# <small>
-                            email:
-                            [[person.firstname]]
-                            age: <span ng-bind-html="''+person.firstname"></span>
-                        </small>#}
-                    </ui-select-choices>
-                </ui-select>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <select class="form-control select2" multiple="multiple" data-placeholder="Select a Nom" ">
+                            <option ng-repeat="obj in panels" value="[[obj.id]]">[[obj.firstname]] - [[obj.lastname]]  </option>
+                        </select>
+                    </div>
+             
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Prenom</label>
+                        <select class="form-control select2" multiple="multiple" data-placeholder="Select a Prenom" ">
+                            <option ng-repeat="obj in panels" value="[[obj.id]]">[[obj.lastname]]  </option>
+                        </select>
+                    </div>
+                </div>
+                
+                 <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Application</label>
+                        <select class="form-control select2" multiple="multiple" data-placeholder="Select a Application ">
+                            <option ng-repeat="obj in panels" value="[[obj.id]]">[[obj.application]]  </option>
+                        </select>
+                    </div>
+                </div>
+                
 
             </div>
-            <div class="col-md-4">
-                <ui-select multiple position="down"  ng-model="ctrl.multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
-                    <ui-select-match placeholder="Select Nom..."> [[$item.firstname]] </ui-select-match>
-                    <ui-select-choices repeat="person in panels ">
-                        <div ng-bind-html="person.firstname"></div>
-                       {# <small>
-                            email:
-                            [[person.firstname]]
-                            age: <span ng-bind-html="''+person.firstname"></span>
-                        </small>#}
-                    </ui-select-choices>
-                </ui-select>
+            
+            <div class="row">
+                selcted: 
+                
             </div>
 
         </div>

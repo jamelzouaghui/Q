@@ -29,5 +29,9 @@ $(function () {
         'info': true,
         'autoWidth': true
     })
-    
+
+
+    $('.select2').select2({});
+
+
 })

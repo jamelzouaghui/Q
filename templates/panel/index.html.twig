@@ -15,42 +15,106 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label>Nom</label>
-                        <select class="form-control select2" multiple="multiple" data-placeholder="Select a Nom" ">
-                            <option ng-repeat="obj in panels" value="[[obj.id]]">[[obj.firstname]] - [[obj.lastname]]  </option>
+                        <label>Application</label>
+                        <select class="form-control select2" multiple="multiple" ng-model="panel.application" data-placeholder="Recherche Application" >
+                            <option ng-repeat="obj in panels" data-ng-model="obj.selected" value="[[obj.application]]">[[obj.application]]  </option>
                         </select>
                     </div>
-             
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Solution/Marque</label>
+                        <select class="form-control select2" multiple="multiple" ng-model="panel.solution" data-placeholder="Recherche Solution/Marque" >
+                            <option ng-repeat="obj in panels" value="[[obj.solution]]">[[obj.solution]]/[[obj.marque]]  </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Corps</label>
+                        <select class="form-control select2" ng-model="panel.corpeOne" multiple="multiple" data-placeholder="Recherche Corps ">
+                            <option ng-repeat="obj in panels" value="[[obj.corpeOne]]">[[obj.corpeOne]]  </option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Département</label>
+                        <select class="form-control select2" ng-model="panel.departement" multiple="multiple" data-placeholder="Recherche Département" >
+                            <option ng-repeat="obj in panels" value="[[obj.departement]]">[[obj.departement]]  </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Distributeurs</label>
+                        <select class="form-control select2" ng-model="panel.distributeur"  multiple="multiple" data-placeholder="Recherche Distributeurs" >
+                            <option ng-repeat="obj in panels" value="[[obj.distributeur]]">[[obj.distributeur]]  </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Taille</label>
+                        <select class="form-control select2" ng-model="panel.taille" multiple="multiple" data-placeholder="Recherche Taille ">
+                            <option ng-repeat="obj in panels" value="[[obj.taille]]">[[obj.taille]]  </option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Sociéte</label>
+                        <select class="form-control select2" ng-model="panel.societe" multiple="multiple" data-placeholder="Recherche Sociéte ">
+                            <option ng-repeat="obj in panels" value="[[obj.societe]]">[[obj.societe]]  </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <select class="form-control select2" ng-model="panel.firstname" multiple="multiple" data-placeholder="Recherche Nom" >
+                            <option ng-repeat="obj in panels" value="[[obj.firstname]]">[[obj.firstname]]   </option>
+                        </select>
+                    </div>
+
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Prenom</label>
-                        <select class="form-control select2" multiple="multiple" data-placeholder="Select a Prenom" ">
-                            <option ng-repeat="obj in panels" value="[[obj.id]]">[[obj.lastname]]  </option>
+                        <select class="form-control select2" ng-model="panel.lastname" multiple="multiple" data-placeholder="Recherche Prenom" >
+                            <option ng-repeat="obj in panels" value="[[obj.lastname]]">[[obj.lastname]]  </option>
                         </select>
                     </div>
                 </div>
-                
-                 <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Application</label>
-                        <select class="form-control select2" multiple="multiple" data-placeholder="Select a Application ">
-                            <option ng-repeat="obj in panels" value="[[obj.id]]">[[obj.application]]  </option>
-                        </select>
-                    </div>
-                </div>
-                
+
+
+
 
             </div>
-            
-            <div class="row">
-                selcted: 
-                
-            </div>
 
+            selected : [[panel.application]],[[panel.lastname]]
         </div>
-
+ 
     </div>
 
 

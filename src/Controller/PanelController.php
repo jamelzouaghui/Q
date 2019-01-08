@@ -25,7 +25,7 @@ class PanelController extends REST {
      */
     public function getContactsAction() {
         $panels = $this->getDoctrine()->getRepository('App\Entity\PanelEntity')->findAll();
-      
+
         $response['panels'] = $this->getPanelsAsArray($panels);
 
         $view = $this->view($response, 200)->setFormat("json");
@@ -40,7 +40,26 @@ class PanelController extends REST {
             $societe = $panel->getSociete();
             $application = $panel->getApplication();
 
-            $response[] = array('id' => $panel->getId(), 'firstname' => $firstname, 'lastname' => $lastname, 'application' => $application, 'societe' => $societe);
+            $taille = $panel->getTaille();
+            $solution = $panel->getSolution();
+            $marque = $panel->getMarque();
+            $corps = $panel->getCorpeOne();
+            $departement = $panel->getDepartement();
+            $distribution = $panel->getDistribution();
+
+            $response[] = array(
+                'id' => $panel->getId(),
+                'firstname' => $firstname,
+                'lastname' => $lastname,
+                'application' => $application,
+                'societe' => $societe,
+                'taille' => $taille,
+                'solution' => $solution,
+                'marque' => $marque,
+                'corps' => $corps,
+                'departement' => $departement,
+                'distribution' => $distribution,
+            );
         }
         return $response;
     }

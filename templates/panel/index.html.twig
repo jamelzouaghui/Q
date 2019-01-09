@@ -16,9 +16,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Application</label>
-                        <select class="form-control select2" multiple="multiple" ng-model="panel.application" data-placeholder="Recherche Application" >
-                            <option ng-repeat="obj in panels" data-ng-model="obj.selected" value="[[obj.application]]">[[obj.application]]  </option>
-                        </select>
+                        <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.application" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select Prenom..."> [[$item.application]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.application"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
 
                 </div>
@@ -26,18 +30,32 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Solution/Marque</label>
-                        <select class="form-control select2" multiple="multiple" ng-model="panel.solution" data-placeholder="Recherche Solution/Marque" >
+                        {#<select class="form-control select2" multiple="multiple" ng-model="panel.solution" data-placeholder="Recherche Solution/Marque" >
                             <option ng-repeat="obj in panels" value="[[obj.solution]]">[[obj.solution]]/[[obj.marque]]  </option>
-                        </select>
+                        </select>#}
+                        <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.solution" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select solution..."> [[$item.application]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.solution"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Corps</label>
-                        <select class="form-control select2" ng-model="panel.corpeOne" multiple="multiple" data-placeholder="Recherche Corps ">
+                        {#<select class="form-control select2" ng-model="panel.corpeOne" multiple="multiple" data-placeholder="Recherche Corps ">
                             <option ng-repeat="obj in panels" value="[[obj.corpeOne]]">[[obj.corpeOne]]  </option>
-                        </select>
+                        </select>#}
+                        <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.corpeOne" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select corps..."> [[$item.corpeOne]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.corpeOne"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                 </div>
 
@@ -50,9 +68,16 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Département</label>
-                        <select class="form-control select2" ng-model="panel.departement" multiple="multiple" data-placeholder="Recherche Département" >
+                        {#<select class="form-control select2" ng-model="panel.departement" multiple="multiple" data-placeholder="Recherche Département" >
                             <option ng-repeat="obj in panels" value="[[obj.departement]]">[[obj.departement]]  </option>
-                        </select>
+                        </select>#}
+                         <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.departement" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select departement..."> [[$item.departement]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.departement"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
 
                 </div>
@@ -60,18 +85,32 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Distributeurs</label>
-                        <select class="form-control select2" ng-model="panel.distributeur"  multiple="multiple" data-placeholder="Recherche Distributeurs" >
+                        {#<select class="form-control select2" ng-model="panel.distributeur"  multiple="multiple" data-placeholder="Recherche Distributeurs" >
                             <option ng-repeat="obj in panels" value="[[obj.distributeur]]">[[obj.distributeur]]  </option>
-                        </select>
+                        </select>#}
+                         <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.distributeur" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select distributeur..."> [[$item.distributeur]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.distributeur"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Taille</label>
-                        <select class="form-control select2" ng-model="panel.taille" multiple="multiple" data-placeholder="Recherche Taille ">
+                        {#<select class="form-control select2" ng-model="panel.taille" multiple="multiple" data-placeholder="Recherche Taille ">
                             <option ng-repeat="obj in panels" value="[[obj.taille]]">[[obj.taille]]  </option>
-                        </select>
+                        </select>#}
+                        <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.taille" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select taille..."> [[$item.taille]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.taille"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                 </div>
 
@@ -83,17 +122,31 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Sociéte</label>
-                        <select class="form-control select2" ng-model="panel.societe" multiple="multiple" data-placeholder="Recherche Sociéte ">
+                        {#<select class="form-control select2" ng-model="panel.societe" multiple="multiple" data-placeholder="Recherche Sociéte ">
                             <option ng-repeat="obj in panels" value="[[obj.societe]]">[[obj.societe]]  </option>
-                        </select>
+                        </select>#}
+                        <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.societe" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select societe..."> [[$item.societe]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.societe"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Nom</label>
-                        <select class="form-control select2" ng-model="panel.firstname" multiple="multiple" data-placeholder="Recherche Nom" >
+                        {#<select class="form-control select2" ng-model="panel.firstname" multiple="multiple" data-placeholder="Recherche Nom" >
                             <option ng-repeat="obj in panels" value="[[obj.firstname]]">[[obj.firstname]]   </option>
-                        </select>
+                        </select>#}
+                        <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.firstname" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select firstname..."> [[$item.firstname]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.firstname"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
 
                 </div>
@@ -101,9 +154,16 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Prenom</label>
-                        <select class="form-control select2" ng-model="panel.lastname" multiple="multiple" data-placeholder="Recherche Prenom" >
+                        {#<select class="form-control select2" ng-model="panel.lastname" multiple="multiple" data-placeholder="Recherche Prenom" >
                             <option ng-repeat="obj in panels" value="[[obj.lastname]]">[[obj.lastname]]  </option>
-                        </select>
+                        </select>#}
+                        <ui-select multiple  append-to-body="true" my-ui-select ng-model="ctrl.panel.lastname" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                            <ui-select-match placeholder="Select lastname..."> [[$item.lastname]] </ui-select-match>
+                            <ui-select-choices repeat="panel in panels | limitTo: 10 " position="down">
+                                <div ng-bind-html="panel.lastname"></div>
+
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                 </div>
 
@@ -112,9 +172,9 @@
 
             </div>
 
-            selected : [[panel.application]],[[panel.lastname]]
+           {# selected : [[panel.application]],[[panel.lastname]]#}
         </div>
- 
+
     </div>
 
 

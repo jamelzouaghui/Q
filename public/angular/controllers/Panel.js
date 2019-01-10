@@ -15,6 +15,13 @@ app.controller('PanelController', function ($scope, $rootScope, $http) {
                 console.log(result);
                 $scope.panels = result.data.panels;
             });
+    $scope.panel = {};
+    
+    
+    $scope.onSelected = function (item) {
+        console.log(item);
+       $scope.var = item;
+    };
 
 
 

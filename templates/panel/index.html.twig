@@ -115,22 +115,27 @@
             <hr />
             <h3>Segment</h3>
             <p>Called <code>[[ctrl.counter+0]]</code> times</p>
-            <pre ng-model="value">
+            <div ng-model="newSkill">
+                {# <input>
+                 [[panel.application ]],[[panel.lastname ]],[[panel.firstname ]],[[panel.societe ]],[[panel.taille]],[[panel.distributeur ]],[[panel.departement ]],[[panel.corpeOne ]][[panel.solution ]]
+                 </input>#}
+                <input type="text" name="newSkill" ng-model="newSkill" required  value="[[panel.application]]"/>
+            </div>
 
-              [[panel.application ]],[[panel.lastname ]],[[panel.firstname ]],[[panel.societe ]],[[panel.taille]],[[panel.distributeur ]],[[panel.departement ]],[[panel.corpeOne ]][[panel.solution ]]
 
-            </pre>
-             <input type="submit" class="btn  btn-success" value="Valider"/>
-            <hr />
-             <h3>votre Selections</h3>
-            
-            <pre>
+            <form name="skillsFrm" ng-submit="addSkill()">
+                <input type="text" name="newSkill" ng-model="newSkill"  required ></input>
+                <button ng-disabled="skillsFrm.$invalid" ng-click="addSkill()">Add</button>
+            </form>
 
-              <input ng-model="value" /><br />
+            <ul>
+                <li ng-repeat="skill in skills" class="{'fadeOut' : skill.done}">
+                    <span class="fa fa-close" ng-click="deleteSkill($index)"></span>
+                    <span>[[skill.title]]</span>
+                </li>
+            </ul>
 
-            </pre>
-            
-           
+
 
         </div>
 

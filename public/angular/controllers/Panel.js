@@ -16,12 +16,21 @@ app.controller('PanelController', function ($scope, $rootScope, $http) {
                 $scope.panels = result.data.panels;
             });
     $scope.panel = {};
-    
-    
     $scope.onSelected = function (item) {
-        console.log(item);
-       $scope.var = item;
+        $scope.var = item;
     };
+  
+
+    $scope.skills = [];
+
+    $scope.addSkill = function () {
+        $scope.skills.push({'title': $scope.newSkill, 'done': false})
+        $scope.newSkill = ''
+    }
+
+    $scope.deleteSkill = function (index) {
+        $scope.skills.splice(index, 1);
+    }
 
 
 

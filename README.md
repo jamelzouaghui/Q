@@ -1,2 +1,2 @@
-# Q3ADVOCACY
+# Q
 Symfony 4.2 project
